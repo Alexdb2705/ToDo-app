@@ -10,9 +10,9 @@ function App() {
     <>
       <ToDoAdder setToDoList={setToDoList} />
       <ul>
-      {toDoList.map((toDoitem, index) => {
-        return <li key={index}><ToDoItem item={toDoitem}/></li>
-      })}
+        {toDoList.map((toDoitem, index) => {
+          return toDoitem && <li key={index}><ToDoItem item={toDoitem} /></li>
+        })}
       </ul>
     </>
   )
