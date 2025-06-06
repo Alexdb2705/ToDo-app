@@ -5,9 +5,9 @@
 }
 
 body {
-    max-width: 100vw;
+    width: 100vw;
     height: 100vh;
-    margin: 5px;
+    margin: 0px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -21,7 +21,7 @@ body {
     border-radius: 10px;
     border: 2px solid rgba(25, 27, 167, 1);
     padding: 10px;
-    margin: 3px;
+    margin: 5px;
 }
 
 .input-container label, input, button {
@@ -31,5 +31,48 @@ body {
 .input-container button {
     width: fit-content;
     padding: 3px;
-    justify-self: center;
+    align-self: center;
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    border: 1px solid red;
+    border-radius: 15px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-row input {
+    padding-left: 1px;
+}
+
+input {
+    outline: none;
+    box-sizing: border-box;
+    transition: border 0.5s;
+}
+
+input[type='text']:focus {
+    border: 2px solid lightblue;
+    border-radius: 2px;
+}
+
+.done-todo div {
+    text-decoration: line-through;
+    text-decoration-style: double;
+    text-decoration-thickness: 1.5px;
+}
+
+.todo-container div {
+    padding: 2px 5px;
+}
+
+.todo-container button {
+    padding: 3px;
 }

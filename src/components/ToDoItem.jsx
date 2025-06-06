@@ -7,6 +7,10 @@ function ToDoItem({ item }) {
         setItemOwn({})
     }
 
+    function handleDone() {
+        console.log(event.target.value)
+    }
+
     useEffect(() => {
         setItemOwn(item)
     }, [])
@@ -18,8 +22,9 @@ function ToDoItem({ item }) {
             <div className="todo-container">
                 <div className="todo-name">{itemOwn.name}</div>
                 <div className="todo-description">{itemOwn.description}</div>
-                <div className="todo-date">{itemOwn.date}</div>
-                <button onClick={handleRm} className="rm-btn">Remove Item</button>
+                <div className="todo-date">{!itemOwn.date.startsWith('u') && itemOwn.date}</div>
+                <button onClick={(e) => {e.target.parentNode.classList.toggle('done-todo')}} className="rm-btn">Done</button>
+                <button onClick={handleRm} className="rm-btn">Remove</button>
             </div>
         )
     }
