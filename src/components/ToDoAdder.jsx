@@ -5,11 +5,11 @@ function ToDoAdder({ setToDoList }) {
         const name = document.getElementById("input-name").value
         const description = document.getElementById("input-description").value
         const date = document.getElementById("input-date").value.split('-')[2] + '-' + document.getElementById("input-date").value.split('-')[1] + '-' + document.getElementById("input-date").value.split('-')[0]
-        if (name != null | description != null) {
-            setToDoList((prevList) => [...prevList, { name, description, date }])
-            document.querySelectorAll('input').forEach(element => element.value = null)
-            document.querySelector('.add-btn').disabled = true;
-        }
+
+        setToDoList((prevList) => [...prevList, { name, description, date }])
+        
+        document.querySelectorAll('input').forEach(element => element.value = null)
+        document.querySelector('.add-btn').disabled = true;
     }
 
     const handleChange = () => {
@@ -28,7 +28,7 @@ function ToDoAdder({ setToDoList }) {
         <div className="input-container">
             <div className="input-row">
                 <label htmlFor="input-name">Task</label>
-                <input onChange={handleChange} type="text" id="input-name" className="todo-input" autoFocus/>
+                <input onChange={handleChange} type="text" id="input-name" className="todo-input" autoFocus />
             </div>
             <div className="input-row">
                 <label htmlFor="input-description">Description</label>
