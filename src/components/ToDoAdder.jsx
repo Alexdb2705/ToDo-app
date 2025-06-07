@@ -11,15 +11,21 @@ function ToDoAdder({ setToDoList }) {
         }
     }
 
-    useEffect(() => {
-        document.querySelector('.add-btn').disabled = true;
-    }, [])
+    const handleChange = () => {
+        if ((document.getElementById("input-name").length > 0) ) {
+
+        }
+    }
+
+    // useEffect(() => {
+    //     document.querySelector('.add-btn').disabled = true;
+    // }, [])
 
     return (
         <div className="input-container">
             <div className="input-row">
                 <label htmlFor="input-name">Task</label>
-                <input type="text" id="input-name" className="todo-input" />
+                <input type="text" id="input-name" className="todo-input" autoFocus/>
             </div>
             <div className="input-row">
                 <label htmlFor="input-description">Description</label>
