@@ -12,20 +12,18 @@ function ToDoAdder({ setToDoList }) {
     }
 
     const handleChange = () => {
-        if ((document.getElementById("input-name").length > 0) ) {
-
+        if (!document.getElementById('input-name').value.startsWith(' ') & document.getElementById('input-name').value.length > 0) {
+            document.querySelector('.add-btn').disabled = false;
+        } else {
+            document.querySelector('.add-btn').disabled = true;
         }
     }
-
-    // useEffect(() => {
-    //     document.querySelector('.add-btn').disabled = true;
-    // }, [])
 
     return (
         <div className="input-container">
             <div className="input-row">
                 <label htmlFor="input-name">Task</label>
-                <input type="text" id="input-name" className="todo-input" autoFocus/>
+                <input onChange={handleChange} type="text" id="input-name" className="todo-input" autoFocus/>
             </div>
             <div className="input-row">
                 <label htmlFor="input-description">Description</label>
@@ -35,7 +33,7 @@ function ToDoAdder({ setToDoList }) {
                 <label htmlFor="input-date">Date</label>
                 <input type="date" id="input-date" className="todo-input" />
             </div>
-            <button onClick={handleAdd} className="add-btn">Add</button>
+            <button disabled onClick={handleAdd} className="add-btn">Add</button>
         </div>
     )
 }
