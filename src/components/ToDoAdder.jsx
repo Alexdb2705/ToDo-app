@@ -8,6 +8,7 @@ function ToDoAdder({ setToDoList }) {
         if (name != null | description != null) {
             setToDoList((prevList) => [...prevList, { name, description, date }])
             document.querySelectorAll('input').forEach(element => element.value = null)
+            document.querySelector('.add-btn').disabled = true;
         }
     }
 
@@ -18,6 +19,10 @@ function ToDoAdder({ setToDoList }) {
             document.querySelector('.add-btn').disabled = true;
         }
     }
+
+    useEffect(() => {
+        document.querySelector('.add-btn').disabled = true;
+    }, [])
 
     return (
         <div className="input-container">
@@ -33,7 +38,7 @@ function ToDoAdder({ setToDoList }) {
                 <label htmlFor="input-date">Date</label>
                 <input type="date" id="input-date" className="todo-input" />
             </div>
-            <button disabled onClick={handleAdd} className="add-btn">Add</button>
+            <button onClick={handleAdd} className="add-btn">Add</button>
         </div>
     )
 }
