@@ -6,15 +6,11 @@ import ToDoAdder from './components/ToDoAdder.jsx'
 function App() {
   const [toDoList, setToDoList] = useState([])
 
-  useEffect(() => {
-    localStorage.setItem('numTasks', toDoList.length)
-  }, [toDoList])
-
   return (
     <>
-      <ToDoAdder setToDoList={setToDoList} />
+      <ToDoAdder setToDoList={setToDoList}/>
       {toDoList.map((toDoitem, index) => {
-        return toDoitem && <ToDoItem key={index} item={toDoitem} setToDoList={setToDoList} />
+        return toDoitem && <ToDoItem key={index} item={toDoitem}/>
       })}
     </>
   )

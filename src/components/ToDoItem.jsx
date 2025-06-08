@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react"
 
-function ToDoItem({ item, setToDoList }) {
-    const [itemOwn, setItemOwn] = useState({})
+function ToDoItem({ item }) {
+    const [itemOwn, setItemOwn] = useState({ name: item.name, description: item.description, date: item.date })
 
     const handleRm = () => {
-        setItemOwn({})
+        setItemOwn((prevItem) => ({ ...prevItem, name: ''}))
     }
-
-    useEffect(() => {
-        setItemOwn(item)
-    }, [])
 
     {
         return (

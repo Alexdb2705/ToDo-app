@@ -5,7 +5,6 @@ function ToDoAdder({ setToDoList }) {
         const name = document.getElementById("input-name").value
         const description = document.getElementById("input-description").value
         const date = document.getElementById("input-date").value.split('-')[2] + '-' + document.getElementById("input-date").value.split('-')[1] + '-' + document.getElementById("input-date").value.split('-')[0]
-
         setToDoList((prevList) => [...prevList, { name, description, date }])
         
         document.querySelectorAll('input').forEach(element => element.value = null)
